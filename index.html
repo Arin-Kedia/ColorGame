@@ -3,65 +3,147 @@
 <html>
   <head>
     <title>Color Game</title>
-    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="./Untitled-1.css" />
   </head>
   <body onload="newGame()">
     <div id="header">
       <h2>The Great</h2>
-      <h1 id="header-clue">rgb(xxx,xxx,xxx)</h1>
+      <h1 id="header clue">rgb(xxx,xxx,xxx)</h1>
       <h2>Guessing Game</h2>
     </div>
-    <div id="container">
+    <div id="tries">
+        <h3 onclick="newGame()" id ="new">New Game</h3>
+        <h3 id="empty"></h3>
+        <h3 id="nories">No. of Tries = <span id="notries">0</span></h3>
+    </div>
+    <div id="container1">
       <div class="tile" id="1"></div>
       <div class="tile" id="2"></div>
+      <div class="tile" id="3"></div>
+    </div>
+    <div id="container2">
+      <div class="tile" id="4"></div>
+      <div class="tile" id="5"></div>
+      <div class="tile" id="6"></div>
     </div>
 
     <script>
-      var t1 = document.getElementById("1");
-      var t2 = document.getElementById("2");
-      var x;
-      var correctColor;
-
-      function getRandomColor() {
-        var letters = "0123456789ABCDEF";
-        var color = "#";
-        for (var i = 0; i < 6; i++) {
-          color += letters[Math.floor(Math.random() * 16)];
-        }
-        return color;
+        var t1=document.getElementById("1");
+        var t2=document.getElementById("2");
+        var t3=document.getElementById("3");
+        var t4=document.getElementById("4");
+        var t5=document.getElementById("5");
+        var t6=document.getElementById("6");
+        var l=new Array(t1,t2,t3,t4,t5,t6);
+        var x;
+        var correctColor;
+        var n;
+        function getRandomColor() {
+            var letters = "0123456789ABCDEF";
+            var color = "#";
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
       }
-
-      function newGame() {
-        t1.style.background = getRandomColor();
-        t2.style.background = getRandomColor();
-
-        x = Math.floor(Math.random() * 2 + 1);
-
-        if (x == 1) correctColor = t1.style.background;
-        else correctColor = t2.style.background;
-        /* console.log(x);
-        console.log(correctColor); */
-
-        document.getElementById("header-clue").innerHTML = correctColor;
+      function newGame(){
+          t1.style.background=getRandomColor();
+          t2.style.background=getRandomColor();
+          t3.style.background=getRandomColor();
+          t4.style.background=getRandomColor();
+          t5.style.background=getRandomColor();
+          t6.style.background=getRandomColor();
+          n=0
+          x=Math.floor(Math.random()*6);
+          correctColor=l[x].style.background;
+          document.getElementById("header clue").innerHTML = correctColor;
+          document.getElementById("notries").innerHTML=n;
+          document.getElementById("header").style.background = "lightpink";
       }
-
-      t1.addEventListener("click", function () {
-        if (t1.style.background == correctColor) {
-          t2.style.background = correctColor;
-          document.getElementById("header").style.background = correctColor;
-        } else {
-          t1.style.background = "black";
-        }
-      });
-
-      t2.addEventListener("click", function () {
-        if (t2.style.background == correctColor) {
-          t1.style.background = correctColor;
-          document.getElementById("header").style.background = correctColor;
-        } else {
-          t2.style.background = "black";
-        }
-      });
+        t1.addEventListener("click", function(){
+            n++
+            document.getElementById("notries").innerHTML=n;
+            if (t1.style.background==correctColor){
+                for (var j=0;j<6;j++){
+                    var m=l[j]
+                    m.style.background=correctColor;
+                }
+                document.getElementById("header").style.background = correctColor;
+              }
+            else{
+                t1.style.background="black";
+            }  
+          });
+          t2.addEventListener("click", function(){
+              n++
+              document.getElementById("notries").innerHTML=n;
+            if (t2.style.background==correctColor){
+                for (var j=0;j<6;j++){
+                    var m=l[j]
+                    m.style.background=correctColor;
+                }
+                document.getElementById("header").style.background = correctColor;
+              }
+            else{
+                t2.style.background="black";
+            }  
+          });
+          t3.addEventListener("click", function(){
+              n++
+              document.getElementById("notries").innerHTML=n;
+            if (t3.style.background==correctColor){
+                for (var j=0;j<6;j++){
+                    var m=l[j]
+                    m.style.background=correctColor;
+                }
+                document.getElementById("header").style.background = correctColor;
+              }
+            else{
+                t3.style.background="black";
+            }  
+          });
+          t4.addEventListener("click", function(){
+              n++
+              document.getElementById("notries").innerHTML=n;
+            if (t4.style.background==correctColor){
+                for (var j=0;j<6;j++){
+                    var m=l[j]
+                    m.style.background=correctColor;
+                }
+                document.getElementById("header").style.background = correctColor;
+              }
+            else{
+                t4.style.background="black";
+            }  
+          });
+          t5.addEventListener("click", function(){
+              n++
+              document.getElementById("notries").innerHTML=n;
+            if (t5.style.background==correctColor){
+                for (var j=0;j<6;j++){
+                    var m=l[j]
+                    m.style.background=correctColor;
+                }
+                document.getElementById("header").style.background = correctColor;
+              }
+            else{
+                t5.style.background="black";
+            }  
+          });
+          t6.addEventListener("click", function(){
+              n++
+              document.getElementById("notries").innerHTML=n;
+            if (t6.style.background==correctColor){
+                for (var j=0;j<6;j++){
+                    var m=l[j]
+                    m.style.background=correctColor;
+                }
+                document.getElementById("header").style.background = correctColor;
+              }
+            else{
+                t6.style.background="black";
+            }  
+          });
     </script>
   </body>
 </html>
