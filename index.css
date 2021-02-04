@@ -26,9 +26,12 @@
   align-items: center;
 }
 
-#empty{
+#header-clue{
   background-color: cyan;
   width: 75vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #nories{

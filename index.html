@@ -7,13 +7,12 @@
   </head>
   <body onload="newGame()">
     <div id="header">
-      <h2>The Great</h2>
-      <h1 id="header clue">rgb(xxx,xxx,xxx)</h1>
-      <h2>Guessing Game</h2>
+      <h1>THE COLOR</h1>
+      <h1>GUESSING GAME</h1>
     </div>
     <div id="tries">
         <h3 onclick="newGame()" id ="new">New Game</h3>
-        <h3 id="empty"></h3>
+        <h3 id="header-clue">THE CLUE : (xxx,xxx,xxx)</h3>
         <h3 id="nories">No. of Tries = <span id="notries">0</span></h3>
     </div>
     <div id="container1">
@@ -56,7 +55,9 @@
           n=0
           x=Math.floor(Math.random()*6);
           correctColor=l[x].style.background;
-          document.getElementById("header clue").innerHTML = correctColor;
+          var cl=correctColor.length;
+          var mainclue= correctColor.substr(3,cl-2);
+          document.getElementById("header-clue").innerHTML = 'THE CLUE:' + ' ' + mainclue;
           document.getElementById("notries").innerHTML=n;
           document.getElementById("header").style.background = "lightpink";
       }
