@@ -5,7 +5,7 @@
   
 #header {
   background-color: lightpink;
-  height: 20vh;
+  height: 15vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,14 +13,14 @@
 }
 
 #tries{
-  height: 5vh;
+  height: 15vh;
   display: flex;
+  flex-direction: column;
 }
 
 #new{
   height: 5vh;
   background-color: coral;
-  width: 10vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,7 +28,7 @@
 
 #header-clue{
   background-color: cyan;
-  width: 75vw;
+  height: 5vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,7 +36,7 @@
 
 #nories{
   background-color: cyan;
-  width:15vw;
+  height: 5vh;
   display: flex;
   justify-content: center;
   text-align: right;
@@ -44,13 +44,13 @@
 }
 
 #container{
-  height: 75vh;
+  height: 70vh;
   display: flex;
 }
 
 #container1 {
   background-color: black;
-  height: 75vh;
+  height: 70vh;
   width: 50vw;
   display: flex;
   flex-direction: column;
@@ -60,7 +60,7 @@
 
 #container2 {
   background-color: black;
-  height: 75vh;
+  height: 70vh;
   width:50vw;
   display: flex;
   flex-direction: column;
@@ -92,6 +92,7 @@
   #tries{
     height: 5vh;
     display: flex;
+    flex-direction: row;
   }
   
   #new{
