@@ -64,3 +64,81 @@
   width: 150px;
   background-color: aliceblue;
 }
+
+@media only screen and (max-width: 768px) {
+  * {
+    margin: 0;
+    padding: 0;
+  }
+    
+  #header {
+    background-color: lightpink;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #tries{
+    height: 5vh;
+    display: flex;
+  }
+  
+  #new{
+    height: 5vh;
+    background-color: coral;
+    width: 10vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #header-clue{
+    background-color: cyan;
+    width: 75vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #nories{
+    background-color: cyan;
+    width:15vw;
+    display: flex;
+    justify-content: center;
+    text-align: right;
+    align-items: center;
+  }
+
+  #container{
+    height: 75vh;
+    display: flex;
+  }
+  
+  #container1 {
+    background-color: black;
+    height: 75vh;
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  
+  #container2 {
+    background-color: black;
+    height: 75vh;
+    width:50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;  
+  }
+    
+  .tile {
+    height: 150px;
+    width: 150px;
+    background-color: aliceblue;
+  }
+}
