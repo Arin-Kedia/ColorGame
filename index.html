@@ -11,10 +11,12 @@
       <h1>GUESSING GAME</h1>
     </div>
     <div id="difficulty">
-      <h3 id="diftitle">Difficulty:</h3>
+      <div id="diffi"><h3 id="diftitle">Difficulty:</h3>
       <h3 id="easy" onclick="changecol('easy');newGame();setdiff(2)">Easy</h3>
       <h3 id="medium" onclick="changecol('medium');newGame();setdiff(4)">Medium</h3>
-      <h3 id="hard" onclick="changecol('hard');newGame();setdiff(6)">Hard</h3>
+      <h3 id="hard" onclick="changecol('hard');newGame();setdiff(6)">Hard</h3></div>
+      <h3 id="empty"></h3>
+      <h3 id="message"></h3>
     </div>
     <div id="tries">
         <h3 onclick="newGame()" id ="new">New Game</h3>
@@ -72,6 +74,9 @@
           document.getElementById("header-clue").innerHTML = 'THE CLUE:' + ' ' + mainclue;
           document.getElementById("notries").innerHTML=n;
           document.getElementById("header").style.background = "lightpink";
+          document.getElementById("new").innerHTML='New Game';
+          document.getElementById("message").innerHTML='';
+          document.getElementById("message").style.height='0vh';
       }
       function changecol(t){
         document.getElementById('easy').style.background='cornsilk';
@@ -91,9 +96,13 @@
                     m.style.background=correctColor;
                 }
                 document.getElementById("header").style.background = correctColor;
+                document.getElementById('new').innerHTML='Play Again';
+                document.getElementById("message").innerHTML='Correct';
+                document.getElementById("message").style.height='5vh';
               }
             else{
-                t1.style.background="black";
+              document.getElementById("message").innerHTML='Try Again';
+              document.getElementById("message").style.height='5vh';
             }  
           });
           t2.addEventListener("click", function(){
@@ -105,9 +114,13 @@
                     m.style.background=correctColor;
                 }
                 document.getElementById("header").style.background = correctColor;
+                document.getElementById('new').innerHTML='Play Again';
+                document.getElementById("message").innerHTML='Correct';
+                document.getElementById("message").style.height='5vh';
               }
             else{
-                t2.style.background="black";
+              document.getElementById("message").innerHTML='Try Again';
+              document.getElementById("message").style.height='5vh';
             }  
           });
           t3.addEventListener("click", function(){
@@ -119,9 +132,13 @@
                     m.style.background=correctColor;
                 }
                 document.getElementById("header").style.background = correctColor;
+                document.getElementById('new').innerHTML='Play Again';
+                document.getElementById("message").innerHTML='Correct';
+                document.getElementById("message").style.height='5vh';
               }
             else{
-                t3.style.background="black";
+              document.getElementById("message").innerHTML='Try Again';
+              document.getElementById("message").style.height='5vh';
             }  
           });
           t4.addEventListener("click", function(){
@@ -133,9 +150,13 @@
                     m.style.background=correctColor;
                 }
                 document.getElementById("header").style.background = correctColor;
+                document.getElementById('new').innerHTML='Play Again';
+                document.getElementById("message").innerHTML='Correct';
+                document.getElementById("message").style.height='5vh';
               }
             else{
-                t4.style.background="black";
+              document.getElementById("message").innerHTML='Try Again';
+              document.getElementById("message").style.height='5vh';
             }  
           });
           t5.addEventListener("click", function(){
@@ -147,9 +168,13 @@
                     m.style.background=correctColor;
                 }
                 document.getElementById("header").style.background = correctColor;
+                document.getElementById('new').innerHTML='Play Again';
+                document.getElementById("message").innerHTML='Correct';
+                document.getElementById("message").style.height='5vh';
               }
             else{
-                t5.style.background="black";
+              document.getElementById("message").innerHTML='Try Again';
+              document.getElementById("message").style.height='5vh';
             }  
           });
           t6.addEventListener("click", function(){
@@ -161,9 +186,13 @@
                     m.style.background=correctColor;
                 }
                 document.getElementById("header").style.background = correctColor;
+                document.getElementById('new').innerHTML='Play Again';
+                document.getElementById("message").innerHTML='Correct';
+                document.getElementById("message").style.height='5vh';
               }
             else{
-                t6.style.background="black";
+              document.getElementById("message").innerHTML='Try Again';
+              document.getElementById("message").style.height='5vh';
             }  
           });
     </script>
