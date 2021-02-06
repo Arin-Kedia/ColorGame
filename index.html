@@ -10,6 +10,12 @@
       <h1>THE COLOR</h1>
       <h1>GUESSING GAME</h1>
     </div>
+    <div id="difficulty">
+      <h3 id="diftitle">Difficulty:</h3>
+      <h3 id="easy" onclick="changecol('easy')">Easy</h3>
+      <h3 id="medium" onclick="changecol('medium')">Medium</h3>
+      <h3 id="hard" onclick="changecol('hard')">Hard</h3>
+    </div>
     <div id="tries">
         <h3 onclick="newGame()" id ="new">New Game</h3>
         <h3 id="header-clue">THE CLUE : (xxx,xxx,xxx)</h3>
@@ -38,6 +44,7 @@
         var x;
         var correctColor;
         var n;
+        document.getElementById("medium").style.background = "peachpuff";
         function getRandomColor() {
             var letters = "0123456789ABCDEF";
             var color = "#";
@@ -61,6 +68,12 @@
           document.getElementById("header-clue").innerHTML = 'THE CLUE:' + ' ' + mainclue;
           document.getElementById("notries").innerHTML=n;
           document.getElementById("header").style.background = "lightpink";
+      }
+      function changecol(t){
+        document.getElementById('easy').style.background='cornsilk';
+        document.getElementById('medium').style.background='cornsilk';
+        document.getElementById('hard').style.background='cornsilk';
+        document.getElementById(t).style.background='peachpuff';
       }
         t1.addEventListener("click", function(){
             n++
