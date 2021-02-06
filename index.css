@@ -5,9 +5,46 @@
   
 #header {
   background-color: lightpink;
-  height: 15vh;
+  height: 10vh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#difficulty{
+  background-color:cornsilk;
+  height: 5vh;
+  display: flex;
+  align-items: center;
+}
+
+#diftitle{
+  width: 15vh;
+  display: flex;
+  justify-content: center;
+}
+
+#easy{
+  height: 5vh;
+  width: 7vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#medium{
+  height: 5vh;
+  width: 12vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#hard{
+  height: 5vh;
+  width: 7vh;
+  display: flex;
   justify-content: center;
   align-items: center;
 }

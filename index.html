@@ -12,9 +12,9 @@
     </div>
     <div id="difficulty">
       <h3 id="diftitle">Difficulty:</h3>
-      <h3 id="easy" onclick="changecol('easy')">Easy</h3>
-      <h3 id="medium" onclick="changecol('medium')">Medium</h3>
-      <h3 id="hard" onclick="changecol('hard')">Hard</h3>
+      <h3 id="easy" onclick="changecol('easy');newGame();setdiff(2)">Easy</h3>
+      <h3 id="medium" onclick="changecol('medium');newGame();setdiff(4)">Medium</h3>
+      <h3 id="hard" onclick="changecol('hard');newGame();setdiff(6)">Hard</h3>
     </div>
     <div id="tries">
         <h3 onclick="newGame()" id ="new">New Game</h3>
@@ -40,10 +40,14 @@
         var t4=document.getElementById("4");
         var t5=document.getElementById("5");
         var t6=document.getElementById("6");
+        var d1=document.getElementById('easy');
+        var d2=document.getElementById('medium');
+        var d3=document.getElementById('hard');
         var l=new Array(t1,t2,t3,t4,t5,t6);
         var x;
         var correctColor;
         var n;
+        var diff=4;
         document.getElementById("medium").style.background = "peachpuff";
         function getRandomColor() {
             var letters = "0123456789ABCDEF";
@@ -74,6 +78,9 @@
         document.getElementById('medium').style.background='cornsilk';
         document.getElementById('hard').style.background='cornsilk';
         document.getElementById(t).style.background='peachpuff';
+      }
+      function setdiff(t){
+        diff=t;
       }
         t1.addEventListener("click", function(){
             n++
