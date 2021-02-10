@@ -12,16 +12,16 @@
     </div>
     <div id="difficulty">
       <div id="diffi"><h3 id="diftitle">Difficulty:</h3>
-      <h3 id="easy" onclick="changecol('easy');newGame();setdiff(2)">Easy</h3>
-      <h3 id="medium" onclick="changecol('medium');newGame();setdiff(4)">Medium</h3>
-      <h3 id="hard" onclick="changecol('hard');newGame();setdiff(6)">Hard</h3></div>
+      <h3 id="easy" onclick="changecol('easy');setdiff(2);newGame()">Easy</h3>
+      <h3 id="medium" onclick="changecol('medium');setdiff(4);newGame()">Medium</h3>
+      <h3 id="hard" onclick="changecol('hard');setdiff(6);newGame()">Hard</h3></div>
       <h3 id="empty"></h3>
       <h3 id="message"></h3>
     </div>
     <div id="tries">
         <h3 onclick="newGame()" id ="new">New Game</h3>
         <h3 id="header-clue">THE CLUE : (xxx,xxx,xxx)</h3>
-        <h3 id="nories">No. of Tries = <span id="notries">0</span></h3>
+        <h3 id="nories">No. of Tries Remaining : <span id="notries">0</span></h3>
     </div>
     <div id='container'>
       <div id="container1">
@@ -50,6 +50,7 @@
         var correctColor;
         var n;
         var diff=4;
+        var tr=false;
         document.getElementById("medium").style.background = "peachpuff";
         function getRandomColor() {
             var letters = "0123456789ABCDEF";
@@ -59,6 +60,9 @@
             }
             return color;
       }
+      function setdiff(t){
+        diff=8-t;
+      }
       function newGame(){
           t1.style.background=getRandomColor();
           t2.style.background=getRandomColor();
@@ -66,7 +70,7 @@
           t4.style.background=getRandomColor();
           t5.style.background=getRandomColor();
           t6.style.background=getRandomColor();
-          n=0
+          n=diff;
           x=Math.floor(Math.random()*6);
           correctColor=l[x].style.background;
           var cl=correctColor.length;
@@ -84,11 +88,16 @@
         document.getElementById('hard').style.background='cornsilk';
         document.getElementById(t).style.background='peachpuff';
       }
-      function setdiff(t){
-        diff=t;
+      function popalert(n){
+        if (n==0){
+          alert('Game Over');
+          newGame();
+        }
       }
         t1.addEventListener("click", function(){
-            n++
+          if (tr==false){
+            n--;
+          }
             document.getElementById("notries").innerHTML=n;
             if (t1.style.background==correctColor){
                 for (var j=0;j<6;j++){
@@ -99,15 +108,19 @@
                 document.getElementById('new').innerHTML='Play Again';
                 document.getElementById("message").innerHTML='Correct';
                 document.getElementById("message").style.height='5vh';
+                tr=true;
               }
             else{
               document.getElementById("message").innerHTML='Try Again';
               document.getElementById("message").style.height='5vh';
               t1.style.background='black';
+              popalert(n);
             }  
           });
           t2.addEventListener("click", function(){
-              n++
+            if (tr==false){
+            n--;
+          }
               document.getElementById("notries").innerHTML=n;
             if (t2.style.background==correctColor){
                 for (var j=0;j<6;j++){
@@ -118,15 +131,19 @@
                 document.getElementById('new').innerHTML='Play Again';
                 document.getElementById("message").innerHTML='Correct';
                 document.getElementById("message").style.height='5vh';
+                tr=true;
               }
             else{
               document.getElementById("message").innerHTML='Try Again';
               document.getElementById("message").style.height='5vh';
               t2.style.background='black';
+              popalert(n);
             }  
           });
           t3.addEventListener("click", function(){
-              n++
+            if (tr==false){
+            n--;
+          }
               document.getElementById("notries").innerHTML=n;
             if (t3.style.background==correctColor){
                 for (var j=0;j<6;j++){
@@ -137,15 +154,19 @@
                 document.getElementById('new').innerHTML='Play Again';
                 document.getElementById("message").innerHTML='Correct';
                 document.getElementById("message").style.height='5vh';
+                tr=true;
               }
             else{
               document.getElementById("message").innerHTML='Try Again';
               document.getElementById("message").style.height='5vh';
               t3.style.background='black';
+              popalert(n);
             }  
           });
           t4.addEventListener("click", function(){
-              n++
+            if (tr==false){
+            n--;
+          }
               document.getElementById("notries").innerHTML=n;
             if (t4.style.background==correctColor){
                 for (var j=0;j<6;j++){
@@ -156,15 +177,19 @@
                 document.getElementById('new').innerHTML='Play Again';
                 document.getElementById("message").innerHTML='Correct';
                 document.getElementById("message").style.height='5vh';
+                tr=true;
               }
             else{
               document.getElementById("message").innerHTML='Try Again';
               document.getElementById("message").style.height='5vh';
               t4.style.background='black';
+              popalert(n);
             }  
           });
           t5.addEventListener("click", function(){
-              n++
+            if (tr==false){
+            n--;
+          }
               document.getElementById("notries").innerHTML=n;
             if (t5.style.background==correctColor){
                 for (var j=0;j<6;j++){
@@ -175,15 +200,19 @@
                 document.getElementById('new').innerHTML='Play Again';
                 document.getElementById("message").innerHTML='Correct';
                 document.getElementById("message").style.height='5vh';
+                tr=true;
               }
             else{
               document.getElementById("message").innerHTML='Try Again';
               document.getElementById("message").style.height='5vh';
               t5.style.background='black';
+              popalert(n);
             }  
           });
           t6.addEventListener("click", function(){
-              n++
+            if (tr==false){
+            n--;
+          }
               document.getElementById("notries").innerHTML=n;
             if (t6.style.background==correctColor){
                 for (var j=0;j<6;j++){
@@ -194,11 +223,13 @@
                 document.getElementById('new').innerHTML='Play Again';
                 document.getElementById("message").innerHTML='Correct';
                 document.getElementById("message").style.height='5vh';
+                tr=true;
               }
             else{
               document.getElementById("message").innerHTML='Try Again';
               document.getElementById("message").style.height='5vh';
               t6.style.background='black';
+              popalert(n);
             }  
           });
     </script>
