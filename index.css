@@ -10,6 +10,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  transition-duration: 1s;
 }
 
 #difficulty{
@@ -129,6 +130,7 @@
   height: 150px;
   width: 150px;
   background-color: aliceblue;
+  transition-duration: 1s;
 }
 
 @media only screen and (min-width: 768px) {
@@ -144,6 +146,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transition-duration: 1s;
   }
   
   #difficulty{
